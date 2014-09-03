@@ -1,0 +1,10 @@
+{
+	"name": "Recipes",
+	"version": "0.0.1",
+	"dependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-less": "~0.8.1",
+		"grunt-contrib-uglify": "~0.2.5",
+		"grunt-contrib-watch": "latest"
+	}
+}
