@@ -13,6 +13,7 @@ angular.module( "app" ).factory( "TwitterService", function( $rootScope, $http )
 	
 	
 	// ----- EVENTS ----- //
+	service.AUTHENTICATED = service.NAME + "Authenticated";
 	service.UPDATE = service.NAME + "Update";
 	
 	
@@ -32,25 +33,17 @@ angular.module( "app" ).factory( "TwitterService", function( $rootScope, $http )
 	
 	
 	// ----- FUNCTIONS ----- //	
-	service.loadWorlds = function( callback ) {
-		console.log( "WorldService: loadWorlds" );
+	service.authenticate = function( callback ) {
+		console.log( "TwitterService: authenticate" );
 		
-		if ( !worldNames ) {
-		
-			var url = "data/world_names.json";
-			$http.get( url ).success( function( data ) {
-				
-				worldNames = data;
-				callback( worldNames );
-				
-			} );
+		var url = "data/world_names.json";
+		$http.get( url ).success( function( data ) {
 			
-		} else {
-			
+			worldNames = data;
 			callback( worldNames );
+			
+		} );
 		
-		}
-	
 	};
 	
 	service.lookupWorld = function( id ) {
